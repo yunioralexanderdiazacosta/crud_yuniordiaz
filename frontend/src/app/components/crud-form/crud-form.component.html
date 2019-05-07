@@ -1,0 +1,54 @@
+<div class="container my-3">
+	<div class="row">
+		<div class="col-md-10 offset-md-2">
+			<div class="card">
+				<div class="card-header">
+					<h3 class="text-center"> 
+						{{ edit == true ?  'Actualizar' : 'Nuevo' }} Contacto 
+					</h3>
+				</div>
+				<div class="card-body">
+					<form>
+						<div class="form-group">
+							<label>Razon Social</label>
+							<input type="text" class="form-control" name="razon_social" [(ngModel)]="contacto.razon_social" placeholder="Ingresa la razón social" required>
+						</div>
+
+						<div class="form-group">
+							<label>RIF</label>
+							<input type="text" class="form-control" name="rif" [(ngModel)]="contacto.rif" placeholder="Ingresa el RIF..." required>
+						</div>
+
+						<div class="form-group">
+							<label>Contacto</label>
+							<input type="text" class="form-control" name="contacto" [(ngModel)]="contacto.contacto" placeholder="Ingresa el contacto..." required>
+						</div>
+
+						<div class="form-group">
+							<label>Ubicación</label>
+							<input type="text" class="form-control" name="ubicacion" [(ngModel)]="contacto.ubicacion" placeholder="Ingresa la ubicación..." required>
+						</div>
+
+						<div class="form-group">
+							<label>Telefono Principal</label>
+							<input type="text" class="form-control" name="tlf_1" [(ngModel)]="contacto.tlf_1" placeholder="Ingresa el Telefono Principal..." required>
+						</div>
+
+						<div class="form-group">
+							<label>Telefono Opcional</label>
+							<input type="text" class="form-control" name="tlf_2" [(ngModel)]="contacto.tlf_2" placeholder="Telefono Opcional...">
+						</div>
+						
+						<hr>
+					
+						<div class="form-group">
+							<button type="submit" class="btn btn-info btn-lg btn-block" (click)="edit == true ? actualizarContacto() : guardarContacto()">
+								Guardar
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

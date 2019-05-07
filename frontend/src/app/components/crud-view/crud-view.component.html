@@ -1,0 +1,23 @@
+<div class="container my-5">
+	<div class="row">
+		<div class="col-md-10 offset-md-1">
+			<div class="card">
+				<div class="card-header">
+					<h3 class="text-center">
+						<i class="fas fa-info-circle"></i> Información del Contacto 
+					</h3>
+				</div>
+				<div class="card-body">
+					<ul class="list-group">
+						<li class="list-group-item"><b class="text-primary">Razon Social:</b> {{ contacto.razon_social }}</li>
+						<li class="list-group-item"><b class="text-primary">RIF:</b> {{ contacto.rif }}</li>
+						<li class="list-group-item"><b class="text-primary">Contacto:</b> {{ contacto.contacto }}</li>
+						<li class="list-group-item"><b class="text-primary">Ubicación:</b> {{ contacto.ubicacion }}</li>
+						<li class="list-group-item"><b class="text-primary">Telefono Principal:</b> {{ contacto.tlf_1 }}</li>
+						<li class="list-group-item" *ngIf="contacto.tlf_2"><b class="text-primary">Telefono Opcional:</b> {{ contacto.tlf_2 }}</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

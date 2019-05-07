@@ -1,0 +1,46 @@
+<div class="container my-5">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h3 class="text-center"><i clas="fas fa-list"></i> Lista de Contactos</h3>
+				</div>
+				<div class="card-body">
+					<table class="table table-bordered table-striped table-hover">
+						<thead class="text-center">
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">Razon Social</th>
+								<th scope="col">Contacto</th>
+								<th scope="col">Tlf. Principal</th>
+								<th scope="col">Acciones</th>
+							</tr>
+						</thead>
+						<tbody class="text-center">
+							<tr *ngFor="let contacto of contactos; index as i">
+								<td>{{ i + 1 }}</td>
+								<td>{{ contacto.razon_social }}</td>
+								<td>{{ contacto.contacto }}</td>
+								<td>{{ contacto.tlf_1  }}</td>
+
+								<td>
+									<a [routerLink]="['view', contacto.id]" class="btn btn-primary">
+										<i class="fas fa-eye fa-lg"></i>
+									</a>
+									
+									<a [routerLink]="['edit', contacto.id]" class="btn btn-warning">
+										<i class="fas fa-edit fa-lg"></i>
+									</a>
+
+									<button (click)="eliminarContacto(contacto.id)" class="btn btn-danger">
+										<i class="fas fa-trash fa-lg"></i>
+									</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
